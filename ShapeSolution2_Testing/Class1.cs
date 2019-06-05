@@ -11,13 +11,14 @@ namespace ShapeSolution2_Testing
     [TestFixture]
     public class Class1
     {
+       
         [Test]
-        public void Analyze_Firstside1_inputside2_inputside3_ExpectedResult_NotTriangle()
+        public void Analyze_Firstside1_inputside2_inputside3_ExpectedResult_Equilateral()
         {
 
-            int k = 1;
-            int m = 2;
-            int p = 3;
+            int k = 15;
+            int m = 15;
+            int p = 15;
 
             string temp = string.Empty;
 
@@ -27,87 +28,134 @@ namespace ShapeSolution2_Testing
 
                 if (k == m && m == p)
                 {
-                    temp= string.Format("{0} This is an Equilateral.", triangleType);
+                    temp = string.Format("{0} This is an Equilateral.", triangleType);
                 }
                 else if (k == m || m == p || k == p)
                 {
-                    temp= string.Format("{0} This is an Isosceles.", triangleType);
+                    temp = string.Format("{0} This is an Isosceles.", triangleType);
                 }
                 else
                 {
                     temp = string.Format("{0} This is a Scalene.", triangleType);
                 }
             }
-
-            String s = TriangleSolver.Analyze(k,m,p);
-
-            Assert.AreEqual(s,temp);
-        }
-    }
-    /*
-    [Test]
-    public void Analyze_Firstside1_inputside2_inputside3_ExpectedResult_NotTriangle()
-    {
-
-        int k = 1;
-        int m = 2;
-        int p = 3;
-
-        string temp = string.Empty;
-
-        if (((k + m) > p) && ((k + p) > m) && ((m + p) > k))
-        {
-            string triangleType = "Triangle Type = ";
-
-            if (k == m && m == p)
+            else
             {
-                temp = string.Format("{0} This is an Equilateral.", triangleType);
+                temp = "These values can not make triangle.\n Try different values.";
             }
-            else if (k == m || m == p || k == p)
+
+            String s = TriangleSolver.Analyze(k, m, p);
+
+            Assert.AreEqual(s, temp);
+        }
+        [Test]
+        public void Analyze_Firstside1_inputside2_inputside3_ExpectedResult_Isosceles()
+        {
+
+            int k = 18;
+            int m = 18;
+            int p = 9;
+
+            string temp = string.Empty;
+
+            if (((k + m) > p) && ((k + p) > m) && ((m + p) > k))
             {
-                temp = string.Format("{0} This is an Isosceles.", triangleType);
+                string triangleType = "Triangle Type = ";
+
+                if (k == m && m == p)
+                {
+                    temp = string.Format("{0} This is an Equilateral.", triangleType);
+                }
+                else if (k == m || m == p || k == p)
+                {
+                    temp = string.Format("{0} This is an Isosceles.", triangleType);
+                }
+                else
+                {
+                    temp = string.Format("{0} This is a Scalene.", triangleType);
+                }
             }
             else
             {
-                temp = string.Format("{0} This is a Scalene.", triangleType);
+                temp = "These values can not make triangle.\n Try different values.";
             }
+
+            String s = TriangleSolver.Analyze(k, m, p);
+
+            Assert.AreEqual(s, temp);
         }
+        [Test]
+        public void Analyze_Firstside1_inputside2_inputside3_ExpectedResult_Scalene()
+        {
 
-        String s = TriangleSolver.Analyze(k, m, p);
+            int k = 5;
+            int m = 17;
+            int p = 9;
 
-        Assert.AreEqual(s, temp);
+            string temp = string.Empty;
+
+            if (((k + m) > p) && ((k + p) > m) && ((m + p) > k))
+            {
+                string triangleType = "Triangle Type = ";
+
+                if (k == m && m == p)
+                {
+                    temp = string.Format("{0} This is an Equilateral.", triangleType);
+                }
+                else if (k == m || m == p || k == p)
+                {
+                    temp = string.Format("{0} This is an Isosceles.", triangleType);
+                }
+                else
+                {
+                    temp = string.Format("{0} This is a Scalene.", triangleType);
+                }
+            }
+            else
+            {
+                temp = "These values can not make triangle.\n Try different values.";
+            }
+
+            String s = TriangleSolver.Analyze(k, m, p);
+
+            Assert.AreEqual(s, temp);
+        }
+        [Test]
+        public void Analyze_Firstside1_inputside2_inputside3_ExpectedResult_NotTriangle()
+        {
+
+            int k = 1000;
+            int m = 1500;
+            int p = 500;
+
+            string temp = string.Empty;
+
+            if (((k + m) > p) && ((k + p) > m) && ((m + p) > k))
+            {
+                string triangleType = "Triangle Type = ";
+
+                if (k == m && m == p)
+                {
+                    temp = string.Format("{0} This is an Equilateral.", triangleType);
+                }
+                else if (k == m || m == p || k == p)
+                {
+                    temp = string.Format("{0} This is an Isosceles.", triangleType);
+                }
+                else
+                {
+                    temp = string.Format("{0} This is a Scalene.", triangleType);
+                }
+            }
+            else
+            {
+                temp = "These values can not make triangle.\n Try different values.";
+            }
+
+            String s = TriangleSolver.Analyze(k, m, p);
+
+            Assert.AreEqual(s, temp);
+        }
     }
 }
-[Test]
-public void Analyze_Firstside1_inputside2_inputside3_ExpectedResult_NotTriangle()
-{
-
-    int k = 1;
-    int m = 2;
-    int p = 3;
-
-    string temp = string.Empty;
-
-    if (((k + m) > p) && ((k + p) > m) && ((m + p) > k))
-    {
-        string triangleType = "Triangle Type = ";
-
-        if (k == m && m == p)
-        {
-            temp = string.Format("{0} This is an Equilateral.", triangleType);
-        }
-        else if (k == m || m == p || k == p)
-        {
-            temp = string.Format("{0} This is an Isosceles.", triangleType);
-        }
-        else
-        {
-            temp = string.Format("{0} This is a Scalene.", triangleType);
-        }
-    }
-
-    String s = TriangleSolver.Analyze(k, m, p);
-
-    Assert.AreEqual(s, temp);
-}*/
-    }
+   
