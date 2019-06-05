@@ -1,0 +1,5 @@
+﻿1>------ Build started: Project: ShapeSolution2, Configuration: Debug Any CPU ------
+1>  ShapeSolution2 -> C:\Users\Kashyap\source\repos\ShapeSolution2\ShapeSolution2\bin\Debug\ShapeSolution2.exe
+2>------ Build started: Project: ShapeSolution2_Testing, Configuration: Debug Any CPU ------
+2>  ShapeSolution2_Testing -> C:\Users\Kashyap\source\repos\ShapeSolution2\ShapeSolution2_Testing\bin\Debug\ShapeSolution2_Testing.dll
+========== Build: 2 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
